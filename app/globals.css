@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-background: #181818;
+  --color-background2:#222222;
+  --color-background-card: #3C3B3BCD;
+  --color-text: #F7F7F7;
+  --color-accent-1: #FF5722;
+  --color-accent-2: #673AB7;
+  --color-hover: #FFEB3B;
+  --color-texthover: #181818;
+}
+
+.prose h1 {
+  @apply text-3xl text-accent-1;
+}
+
+.prose pre {
+  @apply bg-zinc-900 text-text p-4 rounded;
+}
+
+section.standard-section {
+  @apply mb-12 border-l-4 border-accent-1 pl-4;
+}
