@@ -7,6 +7,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { CheatsheetSection } from '@/components/CheatsheetSection';
 import { CodeBlock } from '@/components/CodeBlock';
 import {CheatsheetBlock} from "@/components/CheatsheetBlock";
+import {Topic} from "@/components/Topic";
+import {Block} from "@/components/Block";
+import {LinkItem, LinkBox} from "@/components/Link";
 
 interface PageProps {
     params: {
@@ -31,7 +34,7 @@ export default async function CheatsheetPage(props: PageProps) {
     const { content, data } = matter(source);
 
     return (
-        <main className="max-w-3xl mx-auto py-10 px-4">
+        <main className="w-full px-4">
             <div className="flex items-center gap-4 mb-4">
                 {data.icon && (
                     <Image src={data.icon} alt={data.title} width={40} height={40} />
@@ -59,9 +62,10 @@ export default async function CheatsheetPage(props: PageProps) {
                 <MDXRemote
                     source={content}
                     components={{
-                        CheatsheetSection,
-                        CheatsheetBlock,
-                        CodeBlock,
+                        Topic,
+                        Block,
+                        LinkItem,
+                        LinkBox
                     }}
                 />
             </article>
